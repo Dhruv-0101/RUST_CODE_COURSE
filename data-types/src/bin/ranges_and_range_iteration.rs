@@ -12,7 +12,7 @@ fn main() {
     let letters = 'a'..'f';
 
     for letter in letters {
-        println!("{letter}");
+        println!("\n{letter}");
     }
 
     let colors = ["Red", "Green", "Yellow"];
