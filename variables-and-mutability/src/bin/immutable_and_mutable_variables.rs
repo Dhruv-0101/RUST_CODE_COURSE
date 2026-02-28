@@ -5,3 +5,5 @@ fn main() {
     gym_reps = 15;
     println!("I now plan to do {gym_reps} reps");
 }
+//rustc --explain E0384
+//rustc error code index
