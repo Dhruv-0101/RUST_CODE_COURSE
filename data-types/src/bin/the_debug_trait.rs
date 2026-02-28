@@ -5,4 +5,5 @@ fn main() {
     println!("{}", 3.14);
     println!("{}", true);
     println!("{seasons:#?}");
+    println!("{:?}", seasons);
 }

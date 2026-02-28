@@ -1,5 +1,5 @@
 fn main() {
-    open_store("Brooklyn");
+    open_store("Brooklyn");// argument
     bake_pizza(20, "pepperoni");
     swim_in_profit();
     swim_in_profit();
@@ -8,7 +8,7 @@ fn main() {
     bake_pizza(15, "mushroom");
 }
 
-fn open_store(neighborhood: &str) {
+fn open_store(neighborhood: &str) {// parameter
     println!("Opening my pizza store in {neighborhood}");
 }
 
