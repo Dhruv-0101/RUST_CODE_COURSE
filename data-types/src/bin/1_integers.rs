@@ -6,8 +6,8 @@ fn main() {
     let thirty_two_bit_unsigned: u32 = 4294967295;
 
     let some_value = 20u16;
+    let some_other_value = 20i32;
 }
-
 /*
 fn main() {
     // Signed integers (can be negative)
