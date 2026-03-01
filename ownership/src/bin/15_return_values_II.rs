@@ -1,3 +1,4 @@
+//give and take ownership
 fn main() {
     let mut current_meal = String::new();
     current_meal = add_flour(current_meal);

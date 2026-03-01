@@ -4,4 +4,6 @@ fn main() {
 
     let my_heap_value = String::from("Toyota");
     let my_heap_reference = &my_heap_value;
+    println!("{}", my_heap_reference);
+    println!("{}", my_heap_value);
 }

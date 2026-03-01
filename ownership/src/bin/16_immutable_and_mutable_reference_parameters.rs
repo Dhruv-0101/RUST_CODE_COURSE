@@ -2,6 +2,7 @@ fn main() {
     let mut current_meal = String::new();
     add_flour(&mut current_meal);
     show_my_meal(&current_meal);
+    println!("{current_meal}");
 }
 
 // meal: String

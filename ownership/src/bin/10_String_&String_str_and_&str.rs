@@ -8,7 +8,7 @@ fn main() {
       str - A hardcoded, read-only piece of text encoded in
       the binary
 
-      &str ("ref str") - A reference to th text in the memory
+      &str ("ref str") - A reference to the text in the memory
       that has loaded the binary file
     */
 
