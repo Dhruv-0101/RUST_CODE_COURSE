@@ -11,3 +11,7 @@ fn main() {
 fn print_length(slice: &[i32]) {
     println!("{}", slice.len());
 }
+/*fn print_length(slice: &[i32;6]) {
+    println!("{}", slice.len());
+} */
+//same as 5
