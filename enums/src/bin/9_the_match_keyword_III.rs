@@ -23,3 +23,12 @@ fn wash_laundry(cycle: LaundryCycle) {
         }
     }
 }
+
+/*
+💡 If you wanted to check the value too:
+You can do:
+
+LaundryCycle::Hot { temperature: 100 } => {
+    println!("Running hot cycle at exactly 100°C!");
+}
+*/

@@ -7,8 +7,8 @@ enum CardSuit {
 }
 
 struct Card {
-	rank: String,
-	suit: CardSuit
+    rank: String,
+    suit: CardSuit,
 }
 
 fn main() {
@@ -18,5 +18,5 @@ fn main() {
     println!("{:?}", second_card);
 
     let card_suits = [CardSuit::Hearts, CardSuit::Clubs];
-    let card_suits = (CardSuit::Hearts, CardSuit::Spades)
+    let card_suits = (CardSuit::Hearts, CardSuit::Spades);
 }

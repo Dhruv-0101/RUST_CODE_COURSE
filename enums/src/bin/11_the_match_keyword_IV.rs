@@ -21,4 +21,7 @@ impl OnlineOrderStatus {
 
 fn main() {
     OnlineOrderStatus::Shipped.check();
+    let order_status = OnlineOrderStatus::Shipped;
+    order_status.check();
+    order_status.check(); // ✅ Still works because `check(&self)` borrows immutably, no ownership move
 }
