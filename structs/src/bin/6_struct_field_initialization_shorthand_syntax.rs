@@ -12,14 +12,14 @@ fn main() {
         coffee.name, coffee.price, coffee.is_hot
     );
 
-    let name = String::from("Latte");
-    let price = 3.99;
-    let is_hot = false;
-    let latte = Coffee {
-        name,
-        price,
-        is_hot,
-    };
+    // let name = String::from("Latte");
+    // let price = 3.99;
+    // let is_hot = false;
+    // let latte = Coffee {
+    //     name,
+    //     price,
+    //     is_hot,
+    // };
 }
 
 fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {

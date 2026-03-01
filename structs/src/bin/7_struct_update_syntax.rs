@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Coffee {
     price: f64,
     name: String,
@@ -14,6 +15,7 @@ fn main() {
 
     println!("{}", caramel_macchiato.name);
     println!("{}", mocha.name);
+    println!("{:#?}", caramel_macchiato);
 }
 
 fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {

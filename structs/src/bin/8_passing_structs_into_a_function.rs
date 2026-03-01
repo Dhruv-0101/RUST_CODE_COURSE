@@ -9,6 +9,7 @@ fn main() {
     drink_coffee(&mut mocha);
 
     println!("{}", mocha.price);
+    println!("{}", mocha.is_hot);
 }
 
 fn make_coffee(name: String, price: f64, is_hot: bool) -> Coffee {

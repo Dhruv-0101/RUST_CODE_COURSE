@@ -25,6 +25,9 @@ fn main() {
     };
 
     song.display_song_info();
+    // println!("{:#?}", song);
     song.double_length();
+    // println!("{:#?}", song);
     song.display_song_info();
+    println!("{:#?}", song);
 }

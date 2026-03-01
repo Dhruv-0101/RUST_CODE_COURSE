@@ -6,6 +6,7 @@ struct TaylorSwiftSong {
 }
 
 impl TaylorSwiftSong {
+    //immutable struct value (self parameter takes ownership)
     fn display_song_info(self) {
         println!("Title: {}", self.title);
         println!("Release Year: {}", self.release_year);
@@ -21,4 +22,5 @@ fn main() {
     };
 
     song.display_song_info();
+    // println!("Song: {:#?}", song.title);
 }

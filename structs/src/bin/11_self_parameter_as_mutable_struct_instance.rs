@@ -32,4 +32,5 @@ fn main() {
     };
 
     song.double_length();
+    // println!("{:#?}", song);
 }

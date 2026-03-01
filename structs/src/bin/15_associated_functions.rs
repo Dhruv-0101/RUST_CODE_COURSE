@@ -4,6 +4,8 @@ struct TaylorSwiftSong {
     release_year: u32,
     duration_secs: u32,
 }
+//associated fucntion means return self as a parameter
+//not called on an instance
 
 impl TaylorSwiftSong {
     fn new(title: String, release_year: u32, duration_secs: u32) -> Self {
