@@ -7,11 +7,10 @@ fn main() {
     coffee_pairings.insert(&drink, &milk);
     coffee_pairings.insert("Flat White", "Almond Milk");
 
-    coffee_pairings.entry("Latte").or_insert("Pistachio Milk");
-    println!("{coffee_pairings:?}");
+    let value = coffee_pairings
+        .get("Flat White") //imp
+        .copied()
+        .unwrap_or("Unknown Milk");
 
-    coffee_pairings
-        .entry("Cappuccino")
-        .or_insert("Pistachio Milk");
-    println!("{coffee_pairings:?}");
+    println!("{value}");
 }
