@@ -6,4 +6,5 @@ fn main() {
     println!("{icon}");
     println!("{first_name}");
     println!("{last_name}");
+    //not like previous example.can not take ownership
 }
