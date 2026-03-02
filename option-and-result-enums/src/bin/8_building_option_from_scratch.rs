@@ -26,4 +26,9 @@ fn main() {
 
     let none_option = MyOption::None;
     println!("{}", none_option.unwrap_or(13));
+
+    let none_option = MyOption::None;
+    let ans = none_option.unwrap();
+    println!("{}", ans);
 }
+//here ownerhip is not moved
