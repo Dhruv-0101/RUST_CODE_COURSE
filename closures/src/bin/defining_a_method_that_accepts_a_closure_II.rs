@@ -1,3 +1,13 @@
+// ==============================
+// RUST CLOSURES — FULL FEEL VERSION (EPISODE 12)
+// ==============================
+
+// Topic: Custom Iteration with Closures (The Explorer)
+// Feel:
+// "Bhai, ye closure ka 'Asli Power' dikhata hai.
+// Socho aapke paas ek Map hai. Map ke paas logic hai 'Jagah Jagah Jaane' ka.
+// Par har jagah jaakar kya 'KAAM' karna hai, wo aap closure ke zariye naya naya bhej sakte ho!"
+
 #[derive(Debug)]
 struct Location {
     name: String,
@@ -10,17 +20,21 @@ struct Map<'a> {
 }
 
 impl<'a> Map<'a> {
+    // ------------------------------
+    // THE EXPLORE METHOD 🧭
+    // ------------------------------
+    // Feel: Ye method sirf 'Loop' chalana janta hai.
+    // Ye har location ko `action` (closure) ke hawale kar deta hai.
     fn explore<F>(&self, mut action: F)
     where
-        F: FnMut(&Location),
+        F: FnMut(&Location), // Shart: "Bhai, location dekho aur kuch bhi badlo!"
     {
-        let final_index = self.locations.len();
-        let mut current_index = 0;
-        while current_index < final_index {
-            let current_location = &self.locations[current_index];
+        println!("🗺️ Starting Map Exploration...");
+        for current_location in self.locations {
+            // Robot (action) ko current location de di
             action(current_location);
-            current_index += 1;
         }
+        println!("🏁 Exploration Finished.");
     }
 }
 
@@ -38,18 +52,52 @@ fn main() {
     let map = Map {
         locations: &locations,
     };
+
+    // ------------------------------
+    // TASK 1: COUNT TREASURES 💰
+    // ------------------------------
     let mut total_treasures = 0;
-
-    map.explore(|location| {
-        total_treasures += location.treasures;
+    // Feel: Map sirf jagah jagah ja raha hai, counting hum closure mein kar rahe hain.
+    map.explore(|loc| {
+        println!("Robot: Found {} treasures at {}!", loc.treasures, loc.name);
+        total_treasures += loc.treasures;
     });
+    println!("Total pieces collected: {}", total_treasures);
 
-    println!("Total treasures collected: {}", total_treasures);
+    println!("\n--- New Task ---");
 
-    let mut location_names: Vec<String> = Vec::new();
-
-    map.explore(|location| {
-        location_names.push(location.name.clone());
+    // ------------------------------
+    // TASK 2: COLLECT NAMES 📝
+    // ------------------------------
+    let mut names = Vec::new();
+    // Same 'map.explore' method, par ab kaam badal gaya!
+    map.explore(|loc| {
+        names.push(loc.name.clone());
     });
-    println!("{location_names:?}");
+    println!("Places visited: {:?}", names);
 }
+
+/*
+EXPECTED OUTPUT:
+🗺️ Starting Map Exploration...
+Robot: Found 5 treasures at Enchanted Forest!
+Robot: Found 10 treasures at Mystic Mountain!
+🏁 Exploration Finished.
+Total pieces collected: 15
+
+--- New Task ---
+🗺️ Starting Map Exploration...
+🏁 Exploration Finished.
+Places visited: ["Enchanted Forest", "Mystic Mountain"]
+*/
+
+/*
+🧠 Deep Feel:
+1. Reusability: `explore` method ko baar baar badalne ki zaroorat nahi.
+   Uski 'Looping' logic fixed hai, lekin uska 'Behavior' generic hai.
+2. FnMut Power: Dono hi tasks mein humne bahar ke variables (`total_treasures`, `names`)
+   ko change kiya. Isiliye `FnMut` shart (bound) kaam aayi.
+3. Separation: Data (Map) aur Action (Closure) alag alag hain.
+
+Bhai, ye ek 'Auto-Pilot' car hai jisne aap driver (closure) ko bitha diya hai.
+*/
