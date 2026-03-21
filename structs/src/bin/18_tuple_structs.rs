@@ -58,7 +58,7 @@ error[E0308]: mismatched types
 XX |     go_to_work(era);
    |                ^^^ expected struct `ShortDuration`, found struct `LongDuration`
 
-   
+
 ✅ Why This Works (Tuple Version)
 rust
 let work_shift = (8, 0);
@@ -72,7 +72,6 @@ fn go_to_work(length: (i32, i32)) {
 }
 Then both (8, 0) and (5, 3) are just plain tuples — no custom type — so Rust allows it.
 */
-
 
 /*
 // fn main() {
