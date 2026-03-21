@@ -10,4 +10,5 @@ fn main() {
 
     let pizza_slice = &pizza_toppings[1..];
     println!("{pizza_slice:?}");
+    println!("{pizza_toppings:?}");
 }
