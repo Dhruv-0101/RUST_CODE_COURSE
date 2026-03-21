@@ -15,3 +15,9 @@ fn main() {
     plain = Cheesesteak::Topping("sausage");
 }
 //yaha pe dekho hamne pehle mushroom onions toppings bacon ko jo type de ne the de diye right.ab dekho plain variable ko hamne explicitly type de diya ki wo Cheesesteak<String> hoga, iska matlab hai ki plain variable ke liye T ka type String hoga. Ab jab ham plain variable ko Cheesesteak::Topping("sausage") se assign karne ki koshish karte hain, to compiler error dega kyunki "sausage" ek &str hai, na ki String. Isliye, plain variable ke liye T ka type String hona chahiye, aur "sausage" ko String me convert karna hoga agar ham usse plain variable me assign karna chahte hain.
+/*
+mushroom	&str
+onions	String
+bacon	&String
+plain	String
+*/
