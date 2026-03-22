@@ -18,8 +18,19 @@ fn main() {
 
     println!("My favorite category of item is {:?}", favorite_category);
 
+    // ---------------------------------------------------------
+    // 🤖 THE ROBOT CHEF (Faker vs. New)
+    // ---------------------------------------------------------
+    // RASTA A: MANUAL (Aapne ingredients bataye)
     // let tall_ladder = Item::new(String::from("Ladder-o-matic 2000"), favorite_category, 100);
-    let tall_ladder: Item = Faker.fake();
+
+    // RASTA B: AUTOMATED (Robot ne random data bhar diya)
+    // Yahan 'new' use nahi hua kyunki 'Faker' ne 'Item' struct ki 
+    // metadata (Dummy trait) ko padha aur apne aap ek object bana diya.
+    let tall_ladder: Item = Faker.fake(); 
+    
+    // NOTE: Ye tabhi chalta hai jab struct par '#[derive(Dummy)]' laga ho!
+    // ---------------------------------------------------------
 
     println!("{:?}", tall_ladder);
 }

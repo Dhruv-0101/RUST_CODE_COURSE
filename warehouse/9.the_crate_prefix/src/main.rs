@@ -1,7 +1,10 @@
 mod inventory;
 mod orders;
+mod feel_the_crate; // ✨ New module added!
 
 fn main() {
+    // 🚠 Calling our Teleportation Demo!
+    feel_the_crate::feel_the_teleport();
     println!(
         "Our managers are {} and {}. We have {} square feet of floor space",
         crate::inventory::MANAGER,

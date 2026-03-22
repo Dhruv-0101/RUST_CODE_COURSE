@@ -11,7 +11,6 @@ use intro_to_modules::orders::MANAGER as ORDERS_MANAGER;
 // use inventory::{FLOOR_SPACE, MANAGER};
 // use orders::MANAGER as ORDERS_MANAGER;
 
-
 fn main() {
     println!(
         "Our managers are {} and {}. We have {} square feet of floor space",

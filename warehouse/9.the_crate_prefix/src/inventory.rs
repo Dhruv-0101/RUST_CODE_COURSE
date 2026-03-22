@@ -7,6 +7,6 @@ pub mod products;
 //inventory/products/mod.rs
 
 pub fn talk_to_manager() {
-    // println!("Hey, {},how's your coffeee?", crate::inventory::MANAGER);//static path
-    println!("Hey, {},how's your coffeee?", MANAGER);//relative path
+    // println!("Hey, {},how's your coffeee?", crate::inventory::MANAGER);//static path-absolute path
+    println!("Hey, {},how's your coffeee?", MANAGER); //relative path
 }
