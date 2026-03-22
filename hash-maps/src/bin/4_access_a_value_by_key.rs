@@ -8,9 +8,12 @@ fn main() {
     coffee_pairings.insert("Flat White", "Almond Milk");
 
     let value = coffee_pairings
-        .get("Flat White") //imp
+        .get("Flat White")
         .copied()
         .unwrap_or("Unknown Milk");
+    // .get() returns an Option<&&str>
+    // .copied() converts Option<&&str> to Option<&str>
+    // .unwrap_or() returns the value if Some, or the default value if None
 
     println!("{value}");
 }

@@ -7,5 +7,6 @@ fn main() {
     coffee_pairings.insert(&drink, &milk);
     coffee_pairings.insert("Flat White", "Almond Milk");
     println!("{}", coffee_pairings.len());
+    println!("{:?}", coffee_pairings);
     println!("{drink} {milk}");
 }
