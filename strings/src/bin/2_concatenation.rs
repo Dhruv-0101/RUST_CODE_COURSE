@@ -12,5 +12,6 @@ fn main() {
 
     // Invalid
     // println!("{first_name}");
-    // println!("{last_name}");
+    // valid
+    println!("{last_name}");
 }
