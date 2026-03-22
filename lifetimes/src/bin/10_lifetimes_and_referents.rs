@@ -3,9 +3,9 @@
 // ==============================
 
 // Topic: Lifetimes and Referents
-// Feel: 
-// "Bhai, 'Referent' matlab wo asiliyat (Data) jise reference point kar raha hai. 
-// Rust ka suhana rule: 'Referent' hamesha 'Reference' se zyada ya barabar zinda rehna chahiye. 
+// Feel:
+// "Bhai, 'Referent' matlab wo asiliyat (Data) jise reference point kar raha hai.
+// Rust ka suhana rule: 'Referent' hamesha 'Reference' se zyada ya barabar zinda rehna chahiye.
 // Agar Referent pehle mar gaya, toh Reference 'Anath' (Orphan/Dangling) ho jayega!"
 
 fn select_first_two<'a>(items: &'a [String]) -> &'a [String] {
@@ -46,11 +46,11 @@ Main still running...
 
 /*
 🧠 Deep Feel:
-Terminology Alert! 
+Terminology Alert!
 - Reference: pointer `&`.
 - Referent: Woh data jise point kiya ja raha hai (e.g. `cities`).
-Rust bas ye check karta hai ki pointer ki lifetime kabhi bhi data ki lifetime 
-se 'bahar' na nikal jaye. 
-Is code mein `select_first_two` ke return value ki lifetime `'a` wahi hai 
+Rust bas ye check karta hai ki pointer ki lifetime kabhi bhi data ki lifetime
+se 'bahar' na nikal jaye.
+Is code mein `select_first_two` ke return value ki lifetime `'a` wahi hai
 jo input `items` ki hai. Simple and safe.
 */
