@@ -29,6 +29,10 @@ fn main() {
     // ------------------------------
     // 2. ANOTHER QUICK CLOSURE 🚀
     // ------------------------------
+    // Feel: "Bhai, yaha humne function ki jagah closure KYU use kiya?"
+    // 1. Anonymous: Chote task ke liye alag se 'fn' likhne ka overhead nahi.
+    // 2. Variable storage: Isse hum ek variable ki tarah pass kar sakte hain.
+    // 3. Capture: Ye bahar ke variables ko 'dekh' sakta hai (jo normal fn nahi kar pata).
     let product = |a: i32, b: i32| -> i32 {
         println!("Robot calculating product...");
         a * b

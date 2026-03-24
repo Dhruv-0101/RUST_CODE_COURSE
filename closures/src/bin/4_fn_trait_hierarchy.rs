@@ -37,6 +37,7 @@ fn main() {
         println!("I stole the {}", stolen);
     };
     take_fn_once(eat_treasure);
+    // println!("{} is stolen", treasure); //error
 
     println!("\nBhai, Hierarchy ka chart niche comments mein dekho!");
 }
@@ -94,8 +95,47 @@ where
           ↑
      [     Fn     ]  <- Sabse Chota (Requirement: Read-Only)
 
-Relationship Logic:
-- Jo 'Fn' hai, wo automatically 'FnMut' bhi hai aur 'FnOnce' bhi.
-- Jo 'FnMut' hai, wo 'FnOnce' toh hai, par 'Fn' nahi hai.
-- Jo 'FnOnce' hai, wo bas akela hai (One-Timer).
+---
+Bhai, ye Rust mein Closures (anonymous functions) ke kaam karne ka tareeka hai.
+Rust ko ye pata hona chahiye ki koi closure apne variables ke saath kya kar raha hai —
+kya wo unhe bas read kar raha hai, change kar raha hai, ya poora ka poora consume (move) kar raha hai.
+
+Isi ke liye ye 3 traits hote hain (Hierarchy wise):
+
+1. Fn (The Reader 📖)
+   Kaam: Ye sirf variables ko "read" karta hai.
+   Analogy: Ek Library ki book — aap sirf padh sakte ho, usme pencil nahi chala sakte.
+   Property: Isse aap jitni baar chaho utni baar call kar sakte ho.
+   Code Example (line 18): let say_hello = || println!("Hello, {}", name); (Sirf name ko print kar raha hai).
+
+2. FnMut (The Worker Painter 🎨)
+   Kaam: Ye variables ko "mutate" (Badal) sakta hai.
+   Analogy: Ek notebook — aap isme likh sakte ho, purana mita ke naya likh sakte ho.
+   Property: Isse call karne ke liye closure khud 'mut' hona chahiye.
+   Code Example (line 25): counter += 1; (Variable ki value change kar raha hai).
+
+3. FnOnce (The Greedy Eater 🍔)
+   Kaam: Ye variables ki ownership "le leta hai" (Move).
+   Analogy: Ek Burger — ek baar kha liya toh khatam, dobara nahi call kar sakte.
+   Property: Ye sirf ek hi baar run ho sakta hai kyunki ye data ko consume kar leta hai.
+   Code Example (line 35): let stolen = treasure; (Ownership treasure se stolen mein chali gayi).
+
+---
+Hierarchy (Asli Khel 🧠)
+Inka aapas mein ek rishta hota hai:
+
+- Fn is a subtype of FnMut
+- FnMut is a subtype of FnOnce
+
+Iska matlab:
+- Jo closure Fn hai (sirf read), wo automatically FnMut aur FnOnce bhi hai.
+- Lekin jo FnOnce hai (data kha gaya), wo Fn nahi ban sakta.
+
+| Trait   | Captured Data            | How many times? |
+| :------ | :-----------             | :-------------- |
+| Fn      | Immutable Reference (&T) | Many            |
+| FnMut   | Mutable Reference (&mut T)| Many            |
+| FnOnce  | Value (T)                | Only Once       |
+
+Aapke upar ke chart mein ye circle aur arrows isi logic ko dikha rahe hain!
 */

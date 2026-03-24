@@ -42,7 +42,7 @@ fn main() {
     capture_string(); // Error: closure is `FnOnce`
     // println!("{}", first_name); // Error: value borrowed after move
     */
-    capture_string(); // Error: closure is `FnOnce`
+    //  capture_string(); // Error: closure is `FnOnce`
 
     println!("Bhai, dhyan dena: Ownership move matlab 'One-Time' power!");
 }
